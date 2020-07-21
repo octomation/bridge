@@ -1,15 +1,18 @@
-> # 🧩 Tool
+> # 🌉 bridge
 >
-> Template for typical Go tool.
+> A bridge between the protobuf and the brief formats.
 
 [![Build][build.icon]][build.page]
 [![Template][template.icon]][template.page]
+[![Coverage][coverage.icon]][coverage.page]
 
 ## 💡 Idea
 
-...
+```bash
+$ bridge service.proto > service.brief
+```
 
-Full description of the idea is available [here][design.page].
+A full description of the idea is available [here][design.page].
 
 ## 🏆 Motivation
 
@@ -24,49 +27,60 @@ Full description of the idea is available [here][design.page].
 ### Homebrew
 
 ```bash
-$ brew install :owner/tap/:binary
+$ brew install kamilsk/tap/bridge
 ```
 
 ### Binary
 
 ```bash
-$ curl -sSfL https://:install.sh | sh
+$ curl -sSfL https://raw.githubusercontent.com/kamilsk/bridge/master/bin/install | sh
 # or
-$ wget -qO-  https://:install.sh | sh
+$ wget -qO-  https://raw.githubusercontent.com/kamilsk/bridge/master/bin/install | sh
 ```
+
+> Don't forget about [security](https://www.idontplaydarts.com/2016/04/detecting-curl-pipe-bash-server-side/).
 
 ### Source
 
 ```bash
 # use standard go tools
-$ go get github.com/:owner/:repository@:version
+$ go get github.com/kamilsk/bridge@latest
 # or use egg tool
-$ egg tools add github.com/:owner/:repository@:version
+$ egg tools add github.com/kamilsk/bridge@latest
 ```
 
-> [egg][]<sup id="anchor-egg">[1](#egg)</sup> is an `extended go get`.
+> [egg][] is an `extended go get`.
 
 ### Bash and Zsh completions
 
 ```bash
-$ :binary completion bash > /path/to/bash_completion.d/:binary.sh
-$ :binary completion zsh  > /path/to/zsh-completions/_:binary.zsh
+$ bridge completion bash > /path/to/bash_completion.d/bridge.sh
+$ bridge completion zsh  > /path/to/zsh-completions/_bridge.zsh
+# or autodetect
+$ source <(bridge completion)
 ```
+
+> See `kubectl` [documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion).
 
 ## 🤲 Outcomes
 
-...
+### 👨‍🔬 Research
 
-<sup id="egg">1</sup> The project is still in prototyping.[↩](#anchor-egg)
+- [github.com/3rf/codecoroner](https://github.com/3rf/codecoroner)
+- [github.com/tsenart/deadcode](https://github.com/tsenart/deadcode)
+- [gitlab.com/opennota/check](https://gitlab.com/opennota/check)
+- [honnef.co/go/tools](https://github.com/dominikh/go-tools)
 
 ---
 
 made with ❤️ for everyone
 
-[build.page]:       https://travis-ci.org/:owner/:repository
-[build.icon]:       https://travis-ci.org/:owner/:repository.svg?branch=master
-[design.page]:      https://www.notion.so/33715348cc114ea79dd350a25d16e0b0?r=0b753cbf767346f5a6fd51194829a2f3
-[promo.page]:       https://github.com/:owner/:repository
+[build.page]:       https://travis-ci.com/kamilsk/bridge
+[build.icon]:       https://travis-ci.com/kamilsk/bridge.svg?branch=master
+[coverage.page]:    https://codeclimate.com/github/kamilsk/bridge/test_coverage
+[coverage.icon]:    https://api.codeclimate.com/v1/badges/c275f8f35b5b164b18cd/test_coverage
+[design.page]:      https://www.notion.so/octolab/bridge-c4220e653415488c847823c88a31dc18?r=0b753cbf767346f5a6fd51194829a2f3
+[promo.page]:       https://github.com/kamilsk/bridge
 [template.page]:    https://github.com/octomation/go-tool
 [template.icon]:    https://img.shields.io/badge/template-go--tool-blue
 
